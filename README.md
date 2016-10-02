@@ -1,6 +1,6 @@
 # 1D Elementary Cellular Automata
 
-![1D Elementary Cellular Automat with rule 22]{/ca1d_r22.png}
+![1D Elementary Cellular Automat with rule 22]{https://raw.githubusercontent.com/fraenky8/cellularAutomata1D/master/ca1d_r22.png}
 
 ## usage
 ```javscript
