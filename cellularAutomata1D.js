@@ -158,5 +158,3 @@ const cellularAutomata1D = ((document) => {
     }
 
 })(document);
-
-cellularAutomata1D.run(cellularAutomata1D.rules.rule22);
