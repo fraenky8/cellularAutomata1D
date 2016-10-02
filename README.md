@@ -4,16 +4,15 @@
 
 ## usage
 ```javscript
-cellularAutomata1D.run(cellularAutomata1D.rules.rule22);
+  cellularAutomata1D.run(cellularAutomata1D.rules.rule22);
 ```
 see `index.html`
 
 ## what, how, where
-inspired by https://www.youtube.com/watch?v=bc-fVdbjAwk
+inspired by https://www.youtube.com/watch?v=bc-fVdbjAwk 
 and the code https://gist.github.com/mpj/94427edd9a5ed4d2cc677f1ae0a0558b
 
 Rules: http://atlas.wolfram.com/01/01/
-
 
 ## Licensing
 
