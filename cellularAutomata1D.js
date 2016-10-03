@@ -20,6 +20,7 @@ const cellularAutomata1D = (() => {
     ];
 
     // http://atlas.wolfram.com/01/01/
+    // inactive = white, active = black
     const rules = {
         rule22: [
             'inactive',
@@ -41,6 +42,26 @@ const cellularAutomata1D = (() => {
             'inactive',
             'active'
         ],
+        rule62: [
+            'inactive',
+            'inactive',
+            'active',
+            'active',
+            'active',
+            'active',
+            'active',
+            'inactive'
+        ],
+        rule75: [
+            'inactive',
+            'active',
+            'inactive',
+            'inactive',
+            'active',
+            'inactive',
+            'active',
+            'active'
+        ],
         rule105: [
             'inactive',
             'active',
@@ -48,6 +69,16 @@ const cellularAutomata1D = (() => {
             'inactive',
             'active',
             'inactive',
+            'inactive',
+            'active'
+        ],
+        rule181: [
+            'active',
+            'inactive',
+            'active',
+            'active',
+            'inactive',
+            'active',
             'inactive',
             'active'
         ],
