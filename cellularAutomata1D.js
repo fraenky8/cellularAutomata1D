@@ -74,9 +74,9 @@ const cellularAutomata1D = (() => {
     const createRowOfCells = () => {
         let row = this.document.createElement('div');
         row.classList.add('row');
+        let cell = this.document.createElement('div');
         for (let i = 0; i < cellCount; i++) {
-            let cell = this.document.createElement('div');
-            row.appendChild(cell);
+            row.appendChild(cell.cloneNode(false));
         }
         root.appendChild(row);
         return row;
@@ -101,11 +101,11 @@ const cellularAutomata1D = (() => {
     };
 
     const applyRule = (row, parentRow, rule) => {
+        let prevSelf, leftSibling, rightSibling;
         for (let i = 0; i < row.childNodes.length; i++) {
-            let target = row.childNodes[i];
-            let prevSelf = parentRow.childNodes[i];
-            let leftSibling = prevSelf.previousElementSibling || parentRow.childNodes[parentRow.childNodes.length - 1];
-            let rightSibling = prevSelf.nextElementSibling || parentRow.childNodes[0];
+            prevSelf = parentRow.childNodes[i];
+            leftSibling = prevSelf.previousElementSibling || parentRow.childNodes[parentRow.childNodes.length - 1];
+            rightSibling = prevSelf.nextElementSibling || parentRow.childNodes[0];
 
             removeAnyState(row.childNodes[i]);
 
@@ -115,7 +115,7 @@ const cellularAutomata1D = (() => {
                     isActive(prevSelf) === ruleStates[r][1] &&
                     isActive(rightSibling) === ruleStates[r][2]
                 ) {
-                    target.classList.add(rule[r]);
+                    row.childNodes[i].classList.add(rule[r]);
                 }
             }
         }
