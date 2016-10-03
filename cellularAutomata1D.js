@@ -1,9 +1,9 @@
 'use strict';
 
-const cellularAutomata1D = ((document) => {
+const cellularAutomata1D = (() => {
     'use strict';
 
-    const root = document.querySelector('.root');
+    const root = this.document.querySelector('.root');
 
     let cellCount = 201;
     let rowCount = 95;
@@ -19,7 +19,7 @@ const cellularAutomata1D = ((document) => {
         [0, 0, 0]
     ];
 
-    // http://atlas.wolfram.com/01/01/105/
+    // http://atlas.wolfram.com/01/01/
     const rules = {
         rule22: [
             'inactive',
@@ -50,6 +50,16 @@ const cellularAutomata1D = ((document) => {
             'inactive',
             'inactive',
             'active'
+        ],
+        rule190: [
+            'active',
+            'inactive',
+            'active',
+            'active',
+            'active',
+            'active',
+            'active',
+            'inactive'
         ]
     };
 
@@ -62,10 +72,10 @@ const cellularAutomata1D = ((document) => {
     };
 
     const createRowOfCells = () => {
-        let row = document.createElement('div');
+        let row = this.document.createElement('div');
         row.classList.add('row');
         for (let i = 0; i < cellCount; i++) {
-            let cell = document.createElement('div');
+            let cell = this.document.createElement('div');
             row.appendChild(cell);
         }
         root.appendChild(row);
@@ -83,7 +93,7 @@ const cellularAutomata1D = ((document) => {
     };
 
     const duplicateRow = (rule) => {
-        const allRows = document.querySelectorAll('.row');
+        const allRows = this.document.querySelectorAll('.row');
         const lastRow = allRows[allRows.length - 1];
         let clone = lastRow.cloneNode(true);
         applyRule(clone, lastRow, rule);
@@ -157,4 +167,4 @@ const cellularAutomata1D = ((document) => {
         }
     }
 
-})(document);
+})();
